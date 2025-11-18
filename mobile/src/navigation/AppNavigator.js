@@ -9,6 +9,11 @@ import WelcomeScreen from '../screens/WelcomeScreen';
 import OnboardingScreen from '../screens/OnboardingScreen';
 import MacroResultScreen from '../screens/MacroResultScreen';
 import DashboardScreen from '../screens/DashboardScreen';
+import MealPlanSetupScreen from '../screens/MealPlanSetupScreen';
+import MealPlanGeneratingScreen from '../screens/MealPlanGeneratingScreen';
+import MealPlanResultScreen from '../screens/MealPlanResultScreen';
+import GroceryListScreen from '../screens/GroceryListScreen';
+import MealPlanListScreen from '../screens/MealPlanListScreen';
 
 const Stack = createStackNavigator();
 
@@ -86,7 +91,42 @@ const AppNavigator = () => {
                 title: 'PrepPal',
               }}
             />
-            {/* Add more screens here as we build them */}
+            <Stack.Screen
+              name="MealPlanSetup"
+              component={MealPlanSetupScreen}
+              options={{
+                title: 'Create Meal Plan',
+              }}
+            />
+            <Stack.Screen
+              name="MealPlanGenerating"
+              component={MealPlanGeneratingScreen}
+              options={{
+                title: 'Generating...',
+                headerLeft: null,
+              }}
+            />
+            <Stack.Screen
+              name="MealPlanResult"
+              component={MealPlanResultScreen}
+              options={{
+                title: 'Your Meal Plan',
+              }}
+            />
+            <Stack.Screen
+              name="GroceryList"
+              component={GroceryListScreen}
+              options={{
+                title: 'Grocery List',
+              }}
+            />
+            <Stack.Screen
+              name="MealPlanList"
+              component={MealPlanListScreen}
+              options={{
+                title: 'My Meal Plans',
+              }}
+            />
           </>
         )}
       </Stack.Navigator>
