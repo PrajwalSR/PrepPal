@@ -1,0 +1,61 @@
+# Expo
+.expo/
+.expo-shared/
+dist/
+web-build/
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Native
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+*.keystore
+
+# Metro
+.metro-health-check*
+
+# Debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# Local configuration
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# iOS
+ios/Pods/
+ios/build/
+*.xcworkspace
+!default.xcworkspace
+
+# Android
+android/app/build/
+android/build/
+*.apk
+*.ap_
+*.aab
