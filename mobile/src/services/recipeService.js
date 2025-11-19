@@ -21,7 +21,7 @@ export const recipeService = {
 
   // Extract recipe from YouTube URL
   extractFromYouTube: async (youtubeUrl) => {
-    const response = await api.post('/recipes/extract-youtube', { youtubeUrl });
+    const response = await api.post('/recipes/extract-from-youtube', { youtubeUrl });
     return response.data;
   },
 

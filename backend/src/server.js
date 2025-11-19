@@ -11,6 +11,9 @@ const authRoutes = require('./routes/authRoutes');
 const recipeRoutes = require('./routes/recipeRoutes');
 const mealPlanRoutes = require('./routes/mealPlanRoutes');
 
+// Import middleware
+const errorHandler = require('./middleware/errorHandler');
+
 // Initialize express app
 const app = express();
 
@@ -65,23 +68,16 @@ app.get('/', (req, res) => {
   });
 });
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({
-    success: false,
-    message: 'Something went wrong!',
-    error: process.env.NODE_ENV === 'development' ? err.message : undefined,
-  });
-});
-
-// 404 handler
+// 404 handler (must be before error handler)
 app.use((req, res) => {
   res.status(404).json({
     success: false,
     message: 'Route not found',
   });
 });
+
+// Global error handling middleware (must be last)
+app.use(errorHandler);
 
 // Start server
 const PORT = process.env.PORT || 5000;
